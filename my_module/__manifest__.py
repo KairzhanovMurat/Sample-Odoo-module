@@ -22,7 +22,7 @@
 
 
     'data': [
-        # 'security/ir.model.access.csv',
+        'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
     ],
@@ -30,4 +30,7 @@
     'demo': [
         'demo/demo.xml',
     ],
+    'installable': True,
+    'auto_install': False,
+    'licence': 'LGPL-3'
 }

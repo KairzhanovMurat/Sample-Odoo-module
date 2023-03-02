@@ -1,7 +1,7 @@
 <odoo>
   <data>
-    <!-- explicit list view definition -->
-<!--
+
+
     <record model="ir.ui.view" id="my_module.list">
       <field name="name">MyModule list</field>
       <field name="model">my_module.my_module</field>
@@ -10,22 +10,23 @@
           <field name="name"/>
           <field name="value"/>
           <field name="value2"/>
+          <field name="extra_field1"/>
+          <field name="one_more_field"/>
+          <field name="date_field"/>
+
         </tree>
       </field>
     </record>
--->
 
-    <!-- actions opening views on models -->
-<!--
+
+
     <record model="ir.actions.act_window" id="my_module.action_window">
       <field name="name">MyModule window</field>
       <field name="res_model">my_module.my_module</field>
       <field name="view_mode">tree,form</field>
     </record>
--->
 
-    <!-- server action to the one above -->
-<!--
+
     <record model="ir.actions.server" id="my_module.action_server">
       <field name="name">MyModule server</field>
       <field name="model_id" ref="model_my_module_my_module"/>
@@ -38,23 +39,16 @@
         }
       </field>
     </record>
--->
 
-    <!-- Top menu item -->
-<!--
     <menuitem name="MyModule" id="my_module.menu_root"/>
--->
-    <!-- menu categories -->
-<!--
+
     <menuitem name="Menu 1" id="my_module.menu_1" parent="my_module.menu_root"/>
     <menuitem name="Menu 2" id="my_module.menu_2" parent="my_module.menu_root"/>
--->
-    <!-- actions -->
-<!--
+
     <menuitem name="List" id="my_module.menu_1_list" parent="my_module.menu_1"
               action="my_module.action_window"/>
     <menuitem name="Server to list" id="my_module" parent="my_module.menu_2"
               action="my_module.action_server"/>
--->
+
   </data>
 </odoo>
