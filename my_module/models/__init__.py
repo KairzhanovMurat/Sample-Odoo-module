@@ -1,3 +1,1 @@
-
-
-from . import models
+from . import students, subjects, schools, teachers

@@ -10,7 +10,7 @@
         very first odoo module
     """,
 
-    'author': "My Company",
+    'author': "Kairzhanov Murat Kairatovich",
     'website': "http://www.yourcompany.com",
 
 
@@ -23,8 +23,11 @@
 
     'data': [
         'security/ir.model.access.csv',
-        'views/views.xml',
+        'views/students.xml',
         'views/templates.xml',
+        'views/subjects.xml',
+        'views/schools.xml',
+        'views/teachers.xml',
     ],
 
     'demo': [

@@ -1,0 +1,31 @@
+<odoo>
+    <data>
+
+        <record id="view_student_form" model="ir.ui.view">
+            <field name="name">student.form</field>
+            <field name="model">my_module.student</field>
+            <field name="arch" type="xml">
+                <form string="Student">
+                    <group>
+                        <field name="name"/>
+                        <field name="school_id"/>
+                        <field name="subject_ids" widget="many2many_tags"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="action_student_form" model="ir.actions.act_window">
+            <field name="name">Students</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">my_module.student</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <menuitem id="menu_student" name="Students"/>
+        <menuitem id="menu_student_form" name="Students Form" parent="menu_student"
+                  action="action_student_form"/>
+    </data>
+</odoo>

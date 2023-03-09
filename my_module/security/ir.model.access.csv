@@ -1,2 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_my_module_my_module,my_module.my_module,model_my_module_my_module,base.group_user,1,1,1,1
+access_my_module_student,my_module.student,model_my_module_student,base.group_user,1,1,1,1
+access_my_module_school,my_module.school,model_my_module_school,base.group_user,1,1,1,1
+access_my_module_subject,my_module.subject,model_my_module_subject,base.group_user,1,1,1,1
+access_my_module_teacher,my_module.teacher,model_my_module_teacher,base.group_user,1,1,1,1
