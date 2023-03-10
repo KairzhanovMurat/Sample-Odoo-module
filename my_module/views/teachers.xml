@@ -17,6 +17,7 @@
                             </tree>
                         </field>
                         <field name="total_num_of_students" readonly="1"/>
+                        <field name="avg_students" readonly="1"/>
                     </group>
                 </form>
             </field>

@@ -15,9 +15,25 @@ class Teacher(models.Model):
     total_num_of_students = fields.Integer(string='Total number of students for teacher',
                                            compute='_total_students')
 
+    avg_students = fields.Integer(string='Average amount of students in a subject for teacher',
+                                  compute='_avg_students')
+
     @api.depends('subject_ids.student_ids')
     def _total_students(self):
         for teacher in self:
-            subjects = [subj for subj in teacher.subject_ids]
-            teacher.total_num_of_students = sum(len(subj.student_ids) for subj in subjects)
+            subjects = teacher.subject_ids
+            if subjects:
+                teacher.total_num_of_students = sum(len(subj.student_ids) for subj in subjects)
+            else:
+                teacher.total_num_of_students = 0
+
+    @api.depends('total_num_of_students', 'subject_ids.student_ids')
+    def _avg_students(self):
+        for teacher in self:
+            subjects = teacher.subject_ids
+            if subjects:
+                teacher.avg_students = teacher.total_num_of_students / len(subjects)
+            else:
+                teacher.avg_students = 0
+
 
