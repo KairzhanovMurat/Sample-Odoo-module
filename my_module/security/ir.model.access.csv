@@ -3,3 +3,4 @@ access_my_module_student,my_module.student,model_my_module_student,base.group_us
 access_my_module_school,my_module.school,model_my_module_school,base.group_user,1,1,1,1
 access_my_module_subject,my_module.subject,model_my_module_subject,base.group_user,1,1,1,1
 access_my_module_teacher,my_module.teacher,model_my_module_teacher,base.group_user,1,1,1,1
+access_my_module_item,my_module.item,model_my_module_item,base.group_user,1,1,1,1

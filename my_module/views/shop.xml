@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="portal_my_home" inherit_id="portal.portal_my_home">
+        <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
+            <t t-call="portal.portal_docs_entry">
+                <t t-set="url">/my/shop_items</t>
+                <t t-set="title">Shop</t>
+                <t t-set="placeholder_count" t-value="'item_counts'"/>
+
+            </t>
+        </xpath>
+    </template>
+
+    <template id="portal_breadcrumbs" inherit_id="portal.portal_breadcrumbs">
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+            <li t-if="page_name == 'items-list'" class="breadcrumb-item">Items</li>
+        </xpath>
+    </template>
+
+
+    <template id="shop_items_list">
+        <t t-call="portal.portal_layout">
+            <t t-call="portal.portal_table">
+
+                <thead>
+                    <tr class="active">
+                        <th class="text-center">Name</th>
+                        <th class="text-center">Price</th>
+                        <th class="text-center">Type</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+                    <t t-foreach="items" t-as="item">
+                        <tr>
+                            <td class="text-center">
+                                <t t-out="item.name"/>
+                            </td>
+                            <td class="text-center">
+                                <t t-out="item.price"/>
+                            </td>
+                            <td class="text-center">
+                                <t t-out="item.type"/>
+                            </td>
+
+                        </tr>
+                    </t>
+                </tbody>
+            </t>
+        </t>
+    </template>
+
+
+</odoo>

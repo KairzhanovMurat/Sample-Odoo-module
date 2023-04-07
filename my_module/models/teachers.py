@@ -14,7 +14,6 @@ class Teacher(models.Model):
 
     total_num_of_students = fields.Integer(string='Total number of students for teacher',
                                            compute='_total_students')
-
     avg_students = fields.Integer(string='Average amount of students in a subject for teacher',
                                   compute='_avg_students')
 

@@ -1,0 +1,49 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="item_tree_view">
+            <field name="name">item.tree</field>
+            <field name="model">my_module.item</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="price"/>
+                    <field name="type"/>
+                    <field name="image" widget="image"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="item_form_view">
+            <field name="name">item.form</field>
+            <field name="model">my_module.item</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="description"/>
+                            <field name="price"/>
+                            <field name="type"/>
+                        </group>
+                        <group>
+                            <field name="image" widget="image"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="item_action">
+            <field name="name">Items</field>
+            <field name="res_model">my_module.item</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Shop" id="main_menu_shop"/>
+        <menuitem name="Items" id="menu_shop_items" parent="main_menu_shop"/>
+        <menuitem name="All Items" id="menu_shop_items_all" parent="menu_shop_items"
+            action="item_action"/>
+    </data>
+</odoo>

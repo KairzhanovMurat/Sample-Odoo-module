@@ -18,7 +18,7 @@
     'version': '0.1',
 
 
-    'depends': ['base',],
+    'depends': ['base', 'portal'],
 
 
     'data': [
@@ -28,11 +28,11 @@
         'views/subjects.xml',
         'views/schools.xml',
         'views/teachers.xml',
+        'views/items.xml',
+        'views/shop.xml',
     ],
 
-    'demo': [
-        'demo/demo.xml',
-    ],
+
     'installable': True,
     'auto_install': False,
     'licence': 'LGPL-3'
